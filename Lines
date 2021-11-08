@@ -1,0 +1,27 @@
+import java.io.InputStreamReader
+
+fun main() {
+    InputStreamReader(System.`in`).use { reader ->
+        var sum = 0  
+        var odd = 0
+        var oven = 0
+        reader.forEachLine { line ->
+            // TODO: Напишите ваш код здесь
+            var sum2 = 0
+            val numbers = line.split(" ")
+            for (n in numbers) {
+                val n = n.toInt()
+                sum2 = sum2 + n
+                if (n % 2 == 1)
+                    odd++
+                else
+                    oven++
+            }
+            if (odd > oven)
+                sum = sum + sum2
+            
+        }
+        // Для печати суммы в STDOUT используйте функцию print.            
+        print(sum)
+    }
+}
